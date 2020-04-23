@@ -4,8 +4,10 @@ while True:
 	if name == 'q':
 		break
 	price = input('請輸入價格: ')
+	price = int(price)
 	products.append([(name), (price)])
 print(products)
 
-for p in products:
-	print(p[0])
+with open ('product.csv', 'w') as f:
+	for p in products:
+		f.write(p[0] + ',' + str(p[1]) + '\n')
